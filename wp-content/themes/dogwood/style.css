@@ -44,6 +44,20 @@ TABLE OF CONTENTS:
 @-o-viewport{width:device-width}
 @viewport{width:device-width}
 
+
+
+/* Variables */
+
+:root {
+    --dark-green: #3B5451;  
+    --med-green: #95aca2;
+    --light-green: #dce8dd;
+
+    /*--light-green: #e1e8dc;*/
+    /* old dark green : dbe2d2 */ 
+    /*--med-green: #95AC97;*/
+}
+
 /*-------------
 # Normalize
 ---------------*/
@@ -93,7 +107,7 @@ template {
 }
 
 a {
-    /* color: #8cb48f; */
+    color: var(--dark-green);
     background-color: transparent;
 }
 
@@ -527,7 +541,7 @@ textarea {
 
 
 a {
-    color: #95AC97;
+    color: var(--dark-green);
     font-weight: bold;
     -o-transition:.5s;
     -ms-transition:.5s;
@@ -537,7 +551,7 @@ a {
 }
 
 a:visited {
-    color: #95AC97;
+    color: var(--dark-green);
 }
 
 a:hover,
@@ -565,16 +579,13 @@ a:active {
     clear: both;
     height: 42px;
     line-height: 42px;
-    width: 100vw;
-    max-width: 100%;
-    background-color: #dbe2d2;
-    color: #545F5E;
+    background-color: var(--light-green);
+    color: var(--dark-green);
     margin-bottom: 3vh;
 }
 
 .main-navigation ul {
     list-style: none;
-    width: 80vw;
     margin: 0 auto;
 }
 
@@ -585,18 +596,22 @@ a:active {
     width: 12%;
     text-align: center;
     -o-transition:.5s;
-  -ms-transition:.5s;
-  -moz-transition:.5s;
-  -webkit-transition:.5s;
-  transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition:.5s;
 }
 
 .main-navigation li:last-child {
     border-right: 1px solid #FFF;
 }
 
+.main-navigation li ul li:last-child {
+    border-right: none;
+}
+
 .main-navigation li:hover {
-    background-color: #545F5E;
+    background-color: var(--med-green);
 
 }
 
@@ -610,16 +625,14 @@ a:active {
 
 /* Sub Menu */
 .main-navigation ul ul {
-    /* box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2); */
     float: left;
     position: absolute;
     left: -999em;
     z-index: 99999;
-    width: 9.2vw;
+    width: 100%;
 }
 .sub-menu {
     padding-left: 0;
-    width: 9.2vw;
 }
 .main-navigation ul ul ul {
     left: -999em;
@@ -627,11 +640,11 @@ a:active {
 }
 .main-navigation ul ul a {
     font-weight: normal;
-    width: 9.3vw;
-    background-color: #dbe2d2;
+    width: 100%;
+    background-color: var(--light-green);
 }
 .main-navigation ul ul li {
-    width: 9.3vw;
+    width: 100%;
     padding-left: 0;
     margin-left: 0;
     border: none;
@@ -643,7 +656,7 @@ a:active {
 }
 .main-navigation ul ul :hover > a,
 .main-navigation ul ul .focus > a {
-    background-color: #545F5E;
+    background-color: var(--med-green);
     color: #dbe2d2;
     border: none;
 }
@@ -668,7 +681,7 @@ a:active {
 .main-navigation .current-menu-ancestor > a {}
 
 
-/* Small menu. */
+/* Small menu */
 
 .menu-toggle,
 .main-navigation.toggled ul {
@@ -1007,21 +1020,10 @@ object {
 
 
 /*-------------------HEADER-----------------*/
-.site-branding {
-    width: 70vw;
-    max-width: 100%;
-    position: relative;
-    margin: 12px auto;
-}
+
 
 .social {
-    display: flex;
-    position: absolute;
-    right: 1em;
-    top: 1.5vh;
-    justify-content: space-between;
-    width: 117px;
-    text-align: center;
+    margin-top: 1rem;
 }
 
 .social img {
@@ -1046,6 +1048,24 @@ object {
     transition:.5s;
 }
 
+.donate-btn {
+    width: 6.5rem;
+    background-color: var(--dark-green);
+    color: var(--light-green);
+    font-size: 1.15rem;
+    text-transform: uppercase;
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+    transition: background-color 0.3s, color 0.3s;
+
+    /*@include shadow;*/
+
+    /*&:hover {
+        background-color: $med-green;
+        color: $dark-green;
+    }*/
+}
+
 .social img:hover {
     opacity: 0.7;
 }
@@ -1063,13 +1083,11 @@ header h1{
     text-align:center;
     font-variant:titling-caps;
 }
+
 .entry-content h1{
     text-align:center;
 }
 
-.happytails-title{
-    text-align:center;
-}
 
 /*-------------------------
     ## Adoptables Archive
@@ -1082,14 +1100,12 @@ header h1{
 
 .adoptable {
     border: 3px solid #dbe2d2 ;
-    width: 29%;
+    /*width: 29%;*/
     float: left;
     height: 400px;
     max-width: 380px;
     margin-top:30px;
     margin-bottom: 50px;
-    margin-left: 2%;
-    margin-right: 2%;
 }
 
 .adoptable-name{
@@ -1145,13 +1161,10 @@ header h1{
 .slide-container,
 .adoptable-info,
 .adoptable-info.adoptable-icons,
-.adoptable-story {
-    /* border: 2px solid #dbe2d2; */
+ {
+     border: 2px solid #dbe2d2; 
 }
-.adoptable-story{
-    margin-top:50px;
-    font-size:18px;
-}
+
 /* Gallery   */
 
 .slide-container {
@@ -1242,8 +1255,8 @@ a .button-adopt{
 
 /* Adoptable Story */
 section.adoptable-story {
-    margin-bottom:1.5em;
-    padding:1.5em; 
+    padding-bottom:1.5em;
+    padding-top:1.5em; 
 }
 
 section.adoptable-story h2 {
@@ -1251,55 +1264,12 @@ section.adoptable-story h2 {
     margin-bottom:1.5em;
 }
 
-p.adoptable-story {
-    width: 80%;
-    margin: 0 auto;
-}
 
-@media only screen and (max-width: 868px) {
-    .adoptable-info {
-        margin-right: 5%;
-        width: 45vw;
-    }
 
-    .slide-container {
-        margin-left: 5%;
-        width: 40vw;
-    }
-    section.adoptable-story {
-        padding: 0;
-    }
-}
-
-@media only screen and (max-width: 600px) {
-    .adoptable-info, .slide-container {
-        float: none;
-        margin: 0 auto;
-        width: 85vw;
-    }
-}
-
-@media only screen and (max-width: 320px) {
-    .table-adoptable-info {
-        width: 100%;
-        margin: 0 auto;
-    }
-}
 /*-------------------------
 ## END Single Adoptables
 --------------------------*/
 
-/*----------------------------
-## Front Page Image Slider
-------------------------------*/
-
-.rslides_tabs {
-    margin-bottom: 0px;
-}
-
-.site-main {
-    padding-bottom: 0px;
-}
 
 
 /*----------------
@@ -1447,9 +1417,6 @@ div#give-sidebar-left {
     float: left;
 }
 
-
-/* [id*='give-form'] div.summary.give-full-width {    width: 100%;    float: none; } */
-
 [id*='give-form'] div.summary {
     width: 95%;
     float: right;
@@ -1510,7 +1477,7 @@ form[id*='give-form'] .give-donation-amount .give-currency-symbol {
     color: #333;
     margin: 0;
     padding: 0 12px;
-    /* float: right; */
+
     height: 35px;
     line-height: 35px;
     font-size: 18px;
@@ -1521,7 +1488,7 @@ form[id*='give-form'] .give-donation-amount .give-currency-symbol {
 
 form[id*='give-form'] .give-donation-amount #give-amount,
 form[id*='give-form'] .give-donation-amount #give-amount-text {
-    /* float: right; */
+   
     border: 1px solid #ccc;
     background: #FFF;
     border-radius: 0;
@@ -1550,9 +1517,7 @@ form[id*='give-form'] .give-donation-amount #give-amount-text {
 ---------------------*/
 
 .gform_wrapper {
-    /* background-color: #e1e8dc; */
     overflow: inherit;
-/*     border: 1px solid #91a7a0; */
     margin-top: 10px;
     width: 75vw;
     left: 0;
@@ -1579,7 +1544,7 @@ form[id*='give-form'] .give-donation-amount #give-amount-text {
     font-size: 24px;
     padding-left: 10px;
     display: none;
-    /* color: #545f5e; */
+
 
 }
 
@@ -1815,12 +1780,12 @@ label .gfield_label{
 
 /*------------------------------
 	##	END Gravity Forms
-	-----------------------------*/
+-----------------------------*/
 
 
 /*--------------------------
 	##	Dogwood Content Styles
-	---------------------------*/
+---------------------------*/
 
 .entry-title {
     width: 70%;
@@ -1837,7 +1802,6 @@ label .gfield_label{
 }
 
 .fpage-content .call-to-actions img {
-   /*max-width: 200px;*/
    height: auto;
 }
 
@@ -1852,14 +1816,12 @@ label .gfield_label{
 }
 
 .fpage-content .cta-links {
-/*    max-width: 100%;
-    min-width: 80%;*/
     height: auto;
     -o-transition:.5s;
-  -ms-transition:.5s;
-  -moz-transition:.5s;
-  -webkit-transition:.5s;
-  transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition:.5s;
 }
 
 .fpage-content .cta-links:hover {
@@ -1874,24 +1836,22 @@ label .gfield_label{
 }
 /*------------------------------------
 	##	END Dogwood Content Styles
-	-----------------------------------*/
+-----------------------------------*/
 
 
 /*----------------------------------
     ##  Happy Tails Content Styles
-    -----------------------------------*/
+-----------------------------------*/
 .happytails-title{
     background-color: #dbe2d2;
     color: #545f5e;
     padding-left: 10px;
-    width: 70%;
     margin-left: auto;
     margin-right: auto;
 }
 
 .post {
     margin: 0 auto;
-    width: 70%;
 }
 
 .post p {
@@ -1903,32 +1863,7 @@ label .gfield_label{
     margin-right: 1.2em;
 }
 
-@media only screen and(min-width:1250px){
 
-.site-footer{
-        height: 20vh;
-        }
- 
-    .site-info{
-        height:20vh;
-        padding-top:1vh;
-    }
-
-}
-@media only screen and (max-width: 868px) {
-    .happytails-title{
-        width: 100%;
-    }
-    .post {
-        width: 100%;
-    }
-    .post .entry-content {
-        padding: 1.2em;
-    }
-    .post p {
-        float: left;
-    }
-}
 
 .nav-links {
     width: 80%;
@@ -1954,37 +1889,23 @@ label .gfield_label{
 ------------------------------*/
 
 .site-footer{
-    min-height: 16em;
-    width: 100vw;
-    background-color: #545F5E;
+    background-color: var(--dark-green);
     color: #e1e8dc;
     text-align: center;
-    padding-top:0;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
     display:inline-block;
     box-sizing:border-box;
-     margin-top:2em;
+    margin-top:3rem;
 }
 
-
-.footer-right,
-.site-info {
-    min-height:10em;
-    width:50vw;
-    box-sizing:border-box;
-    float:left;
-}
 
 /* LEFT SIDE OF FOOTER */
 
-.site-info{
-     border-right:1px solid #e1e8dc; 
-    padding-top: 0;
-}
 
 .site-info a {
     text-decoration: none;
-    color: #e1e8dc;
-    margin-left:5px;
+    color: var(--light-green);
     -o-transition:.5s;
     -ms-transition:.5s;
     -moz-transition:.5s;
@@ -1996,72 +1917,43 @@ label .gfield_label{
     color: #95ad97;
 }
 
-.footer-menu{
+.footer-nav {
     list-style-type:none;
     text-decoration:none;
     text-align:center;
-    margin-bottom: 2em;
+    width: 100%;
+    margin: 0;
 }
 
-.footer-menu a{
+.footer-nav li {
+  
+    margin-right: 0.2rem;
+}
+
+.footer-nav li:after {
+    content: '|';
+    margin-left: 0.2rem;
+}
+
+.footer-nav a{
     font-weight:500;
     font-size: 0.95em;
-    margin-left:5px;
 }
 
-.fpage-content {
-    width: 80vw;
-    margin: 0 auto;
-    /* border:1px solid #000; */
-    overflow: hidden;
-}
-
-/* RIGHT SIDE OF FOOTER */
 
 .designers a, .designers p {
-    /* font-weight: normal; */
     font-size: 0.9em;
     margin-top: 2em;
 }
 
 
-
-.footer-right{
-    margin-top:0;
-    padding-top: 6vh;
-}
-
-.footer-right a{
-    margin-right:0px;
-}
-
-.footer-right p {
-    padding: 0;
-    font-weight: 500;
-}
-
-.footer-right img{
-    width:150px;
-    height:70px;
-    padding:5px;
-    -o-transition:.5s;
-    -ms-transition:.5s;
-    -moz-transition:.5s;
-    -webkit-transition:.5s;
-    transition:.5s;
-}
-
-.footer-right img:hover{
-    opacity: 0.7;
-}
-
 .social-res{
-       width:8em;
-       display:flex;
-       margin:0 auto;
-       justify-content:space-between;
-       position:relative;      
-       /* display:block; */
+   width:8em;
+   display:flex;
+   margin:0 auto;
+   justify-content:space-between;
+   position:relative;      
+   /* display:block; */
 }
 
 .social-res img {
@@ -2078,42 +1970,48 @@ label .gfield_label{
     opacity: 0.7;
 }
 
+/* RIGHT SIDE OF FOOTER */
+
+
+.footer-right p {
+    padding: 0;
+    font-weight: 500;
+}
+
+.footer-right img {
+    width: 150px;
+    height: 70px;
+    padding: 5px;
+    -o-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    border-radius: 8px;
+}
+
 
 .sponsor {
-    height: 100px!important;
-    width: auto;
+    opacity: 0.6;
+}
+
+.sponsor:hover {
+    opacity: 1;
 }
 
 /*------------------------------------
 	## End footer
-	-----------------------------------*/
+-----------------------------------*/
 
-    .entry-content{
-        width:80vw;
-        margin:0 auto;
-        padding-top:10px;
-        /* border: 1px solid #000; */
-        /* padding-right:5vw; */
-    }
+.entry-content p {
+    text-align:left;
+}
 
-    .entry-content p{
-
-        text-align:left;
-        
-    }
-
-    .fpage-content{
-        width:80vw;
-        /* border: 1px solid #000; */
-        margin:0 auto;
-        overflow:hidden;
-    }
-
-    .resource h1, .entry-content h1 {
-        background-color: #dbe2d2;
-        color: #545f5e;
-        padding-left: 10px;
-    }
+.resource h1, .entry-content h1 {
+    background-color: #dbe2d2;
+    color: #545f5e;
+    padding-left: 10px;
+}
 
 /*----------------------------------------------
 # Index page style
@@ -2129,45 +2027,8 @@ label .gfield_label{
 
 .entry-content img{
 
-/*     width:300px; */
     height:auto;
     overflow:hidden;
-}
-
-.entry-content{
-    width:70vw;
-}
-
-
-    /*------------------------------------
-    ## Login Styles
-    -----------------------------------*/
-
-#login h1 a, .login h1 a {
-    width: 391px;
-    height: 100px;
-}
-
-.message {
-    border-left: 4px solid #dbe2d2;
-}
-
-.login form .input, .login form input[type=checkbox], .login input[type=text] {
-    background: #dbe2d2;
-}
-
-.login form .input, .login input[type=text] {
-    color: #545f5e;
-}
-
-.wp-core-ui .button-primary {
-    background: #dbe2d2;
-    border-color: #dbe2d2;
-    -webkit-box-shadow: 0 1px 0 #dbe2d2;
-    box-shadow: 0 1px 0 #dbe2d2;
-    color: #000;
-    text-decoration: none;
-    text-shadow: 0 -1px 1px #dbe2d2,1px 0 1px #dbe2d2,0 1px 1px #dbe2d2,-1px 0 1px #dbe2d2;
 }
 
 
@@ -2180,18 +2041,16 @@ label .gfield_label{
     --------------------*/
 
 
-@media only screen and (max-width:833px) {
+/*@media only screen and (max-width:833px) {
         
         .give-form-wrap{
            height: 34em;
             padding: 0;
-            /* margin-top: -1em; */
             margin: 0 auto;
             width: 70vw;
         }
         .give-total.wrap {
             position: relative;
-            /* height: 0; */
         }
         .give-form-content-wrap {
             height: 0;
@@ -2223,11 +2082,7 @@ label .gfield_label{
             margin: 0 auto;
             height: 18em;
         }
-    /*     .give-btn give-btn-modal {
-            position: absolute;
-            bottom: 0px;
-            margin-bottom: 6vh;
-        } */
+    
         #give-form-100 {
             margin: 0;
             position: relative;
@@ -2239,8 +2094,7 @@ label .gfield_label{
             margin-bottom: 2vh;
         }
         .give-form-title {
-            margin: 1em auto;
-            /* padding: 1em; */
+            margin: 1em auto;    
             text-align: center;
         }
         .entry-content h1{
@@ -2267,10 +2121,7 @@ label .gfield_label{
             flex-direction: column;
             position: absolute;
             margin-top: 2em;
-/*             align-content: center; */
             width: 20vw;
-            /* margin: 5% auto; */
-            /* height: 33vh; */
         }
         .give-donation-amount {
             margin-left: 20vw!important;
@@ -2305,108 +2156,35 @@ label .gfield_label{
             margin-top:0;
             padding-top:0;
         }
-        /* .site-footer{
-            height:70vh;
-        } */
+    
 }
 
-@media (max-width:480px) {
-
-        /* Header */
-    .site-branding {
-        width: 100vw;
-        /* height:22vh; */
-
-    }
-    .logo {
-        max-width: 100%;
-        padding-top: .5em;
-    }
-
-    .social{
-        display:none;
-    }
     .social-res{
        width:50vw;
        display:flex;
        margin:0 auto;
        justify-content:space-around;
-       position:relative;      
-       /* display:block; */
+       position:relative;     
       
     }
 
-    .donate{
-        width:80px;
-/*      right:40vw;
-        top:17vh; */
-    } 
-
-    .site-footer{
-        min-height:50em ;
-        }
-
+*/
         /*Heading Images*/
 
-        img.heading-image {
+     /*   img.heading-image {
             display: none;
-        }
+        }*/
 
-        /*CTA Images*/
-
-        .fpage-content .img-container {
-            width: 100%;
-            float: none;
-            margin: 0 auto;
-        }
         /* footer-menu */
 
-        .footer-right,
+       /* .footer-right,
         .site-info {
-
-        width:100vw;
-        padding:2vw;
-
-        box-sizing:border-box;
-        float:none;
+            box-sizing:border-box;
+            float:none;
         }
-        .site-footer{
-        height: 50vh;
-        }
-}
+}*/
 
-/* ---------------------
-    About Us CTAs
-    ----------------- */
-.entry-content .call-to-actions {
-    width: 100%;
-    margin: 0 auto;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    min-height: 35vh;
-}
 
-.entry-content .img-container {
-    width: 30%;
-    float: left;
-    margin-right: 5%;
-}
-
-.entry-content .img-container:last-child {
-    margin-right: 0;
-}
-
-@media only screen and (max-width: 480px) {
-    .entry-content .call-to-actions {
-        width: 80vw;
-        margin: 0 auto;
-    }
-    .entry-content .img-container {
-        width: 100%;
-        float: none;
-        margin: 0 auto;
-    }
-}
 /* -------------------------
     Scroll Top Button 
     --------------------*/
@@ -2447,29 +2225,7 @@ label .gfield_label{
   background-color: rgba(149, 172, 151, 0.8);
   opacity: 1;
 }
-@media only screen and (min-width: 768px) {
-  .cd-top {
-    right: 20px;
-    bottom: 20px;
-  }
-  .site-footer{
-        height: 30vh;
-        }
- 
-    .site-info{
-        height:30vh;
-        padding-top:8vh;
-    }
-  
-}
-@media only screen and (min-width: 1024px) {
-  .cd-top {
-    height: 60px;
-    width: 60px;
-    right: 30px;
-    bottom: 30px;
-  }
-}
+
 
 /* -------------------------
     Responsive Header + Nav
@@ -2479,18 +2235,7 @@ label .gfield_label{
 }
 
 @media only screen and (max-width: 868px) { 
-    /* Header */
-    .site-branding {
-        width: 100vw;
-    }
-    .logo {
-        max-width: 25%;
-        padding-top: .5em;
-    }
-    .social{
-        top: .5em;
-    }
-
+  
     /* Menu */
     .main-navigation {
         display: none;
@@ -2498,27 +2243,27 @@ label .gfield_label{
     .responsive-navigation {
         display: block;
         margin-bottom: 1em;
-        /* position: fixed; */
-        /* bottom: 0; */
-        /* z-index: 9999; */
     }
+
     .responsive-menu-toggle {
         background-color: #e1e8dc;
         width: 100vw;
-        /* height: 10vh; */
     }
+
     .responsive-menu-toggle {
         color: #545F5E;
         font-size: 1.25em;
     }
+
     .responsive-navigation ul {
         list-style-type: none;
         margin-left: 0;
     }
+
     .responsive-navigation #primary-menu {
         padding-left: 0;
-        /* margin-bottom: 0; */
     }
+
     .responsive-navigation .menu-item a {
         width: 100vw;
         display: block;
@@ -2526,102 +2271,67 @@ label .gfield_label{
         padding-left: 1em;
         padding-top: .5em;
         padding-bottom: .5em;
-        border-bottom: 1px solid #e1e8dc;
-        background-color: #e1e8dc;
+        border-bottom: 1px solid #3B5451;
+        background-color: #3B5451;
     }
+
     .responsive-navigation #primary-menu .current-menu-item a {
         background-color: #95ac97;
         color: white;
     }
+
     .responsive-navigation #primary-menu .current-menu-item ul li a {
         background-color: white;
         color: #95ac97;
     }
+
     .responsive-navigation .sub-menu a {
         padding-left: 3em;
         background-color: white;
     }
     
-    /* Slider */
-    .rslides_nav {
-        display: none;
-    }
+    
+   
 
-    .entry-content {
-        width: 100vw;
-    }
+    /* gravity forms*/
 
-    .fpage-content {
-        width: 100vw;
-    }
-    /* footer-menu */
-
-        .footer-right,
-        .site-info {
+    .gform_wrapper{
         width:100vw;
         padding:2vw;
+    }
+
+    label.gfield_label{
+        font-weight:500;
+        width:90vw;
+        display:inline-block;
+        padding-right:2em;
         box-sizing:border-box;
-        float:none;
-        }
+    }
+   
 
-        .site-footer{
-        min-height: 32em;
-        }
+    .form-input{
+        width:155vw;
+    }
+    .form-textarea{
+        width:80vw;
+    }
+    .form-sub-input{
+        width:75vw;
+    }
+    .gform_button,
+    .gform_next_button,
+    .gform_previous_button {
+       width:80vw;
+       margin:0 auto;
 
-        /* gravity forms*/
+    }
 
-        .gform_wrapper{
-            width:100vw;
-            padding:2vw;
-        }
+    .gform_wrapper textarea.medium {
+    height: 6em;
+    width: 90vw;
+    margin-bottom: 10px;
+    }
 
-        label.gfield_label{
-            font-weight:500;
-            width:90vw;
-            display:inline-block;
-            padding-right:2em;
-            box-sizing:border-box;
-        }
-       
-
-        .form-input{
-            width:155vw;
-        }
-        .form-textarea{
-            width:80vw;
-        }
-        .form-sub-input{
-            width:75vw;
-        }
-        .gform_button,
-        .gform_next_button,
-        .gform_previous_button {
-           width:80vw;
-           margin:0 auto;
-
-        }
-
-        .gform_wrapper textarea.medium {
-        height: 6em;
-        width: 90vw;
-        margin-bottom: 10px;
-        }
-
-        /* CTA LINKS */
-
-        .fpage-content .img-container {
-            max-width: 60%;
-            float: none;
-            margin: 0 auto;
-        }
-
-        .fpage-content .img-container:last-child {
-            margin: auto;
-        }
-
-        .fpage-content .img-container {
-            width: inherit;
-        }
 }
 
 /*----------------------------
@@ -2645,9 +2355,11 @@ label .gfield_label{
     .icons-legend td {
         /* width: 4em; */
     }
+
     .icon-container {
         padding-left: 4em;
     }
+
 @media only screen and (max-width: 1300px) {
     .icons-legend h3 {
         cursor: pointer;
@@ -2665,11 +2377,6 @@ label .gfield_label{
     }
 }
 
-@media only screen and (max-width: 315px){
-    .site-footer{
-        min-height: 40em;
-        }
-}
 @media only screen and (max-width: 868px) {
     .icons-legend {
         width: 100vw;
@@ -2681,23 +2388,7 @@ label .gfield_label{
     .divider{
         width:50vw;
         border-bottom:1px solid #dbe2d2;
-        margin:0 auto;
+        margin:1rem auto;
     }
 }
 
-/* @media only screen and (min-width:315px) and (max-width:765px){
-   .site-footer{
-        height: 50vh;
-        }  
-}
-
-@media only screen and (min-width:766px) and (max-width:870px){
-   .site-footer{
-        height: 50vh;
-        } 
-
-    .site-info{
-        padding-bottom:0;
-        height:10vh;
-    } 
-} */

@@ -32,7 +32,8 @@ get_header(); ?>
 				jQuery(document).ready(function($){
 				  $('.front-pg-slider').slick({
 				  	autoplay: true,
-  					autoplaySpeed: 2000
+  					autoplaySpeed: 2000,
+  					arrows: true
 				  });
 				});
 				</script>
