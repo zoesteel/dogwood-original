@@ -22,67 +22,25 @@ get_header(); ?>
 
 
 
-				<div class="front-pg-slider">
-				  <div><img src="<?php echo get_template_directory_uri(); ?>/images/dogwood-home-slider.jpg" /></div>
-				  <div>your content</div>
-				  <div>your content</div>
-				</div>
-		
-				<script>
-				jQuery(document).ready(function($){
-				  $('.front-pg-slider').slick({
-				  	autoplay: true,
-  					autoplaySpeed: 2000,
-  					arrows: true
-				  });
-				});
-				</script>
-
-
-					<!-- <?php
-						if( have_rows('slides')){
-
-							echo "<ul class='rslides' id='front-page-slides'>";
-
-						    while( have_rows('slides')){
-						        the_row();
-
-						        if(get_sub_field('slide')) {
-						        	$slide = get_sub_field('slide');
-						        	$link = get_sub_field('link');
-									// $caption = get_sub_field('caption');
-
-						        	if($link != '')
-						        		echo "<a href='$link'>";
-						            echo "<li class='slider-image'>";
-						            echo "<img src='$slide'/>";
-						            // if($caption !='')
-						            // echo "<p class='caption'></p>";
-						            echo "</li>";
-						            if($link != '')
-						           		echo "</a>";
-						        }
-					    	}
-					    	echo "</ul>";
-					   	}
-					?> -->
-
-					<!-- Start slideshow -->
-					<!-- <script>
-					  $(function() {
-					    $("#front-page-slides").responsiveSlides({
-					    	auto: true,
-					    	pager: true,
-					    	nav: true,
-					    	speed: 1200
-					    });
+					<div class="front-pg-slider">
+					  <div><img src="<?php echo get_template_directory_uri(); ?>/images/dogwood-home-slider.jpg" /></div>
+					  <div>your content</div>
+					  <div>your content</div>
+					</div>
+			
+					<script>
+					jQuery(document).ready(function($){
+					  $('.front-pg-slider').slick({
+					  	autoplay: true,
+	  					autoplaySpeed: 2000,
+	  					arrows: true
 					  });
-					</script> -->
+					});
+					</script>
+
 				</div><!-- end col-12 -->
 
 			</div><!-- end row -->
-			<!-- <div class="fpage-content"> -->
-			
 
 				<?php
 				// Display Size and Preference
@@ -92,7 +50,7 @@ get_header(); ?>
 					get_template_part( 'template-parts/content', 'page' );
 				endwhile; // End of the loop.
 				?>
-			<!-- </div> --><!-- fpage-content -->
+			
 		</div><!-- end container -->
 	</main><!-- #main -->
 </div><!-- #primary -->
