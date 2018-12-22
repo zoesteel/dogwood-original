@@ -55,13 +55,27 @@
 			 <!-- Icon Links to Social Media -->
 			<div class="social-donate d-flex flex-column col-12 col-sm-6 align-items-center align-items-sm-end">
 				<div class="social d-flex flex-row justify-content-between">
-					<a href="https://www.facebook.com/dogwoodrescuesociety" target="_new"><img src="<?php bloginfo("template_url"); ?>/images/icons/fb.png" alt="Link to Dogwood Rescue on Facebook" class="fb"></a>
-					<a href="https://www.instagram.com/dogwoodrescue" target="_new"><img src="<?php bloginfo("template_url"); ?>/images/icons/ig.png" alt="Link to Dogwood Rescue on Instagram" class="insta"></a>
-					<a href="https://twitter.com/dogwoodrescue" target="_new"><img src="<?php bloginfo("template_url"); ?>/images/icons/twitter.png" alt="Link to Dogwood Rescue on Twitter" class="twitter"></a>
+					<a href="https://www.facebook.com/dogwoodrescuesociety" target="_new">
+						<span class="fa-stack fa-sm">
+						  <i class="fas fa-circle fa-stack-2x"></i>
+						  <i class="fab fa-facebook-f fa-stack-1x" style="color: white"></i>
+						</span>
+<!-- <img src="<?php bloginfo("template_url"); ?>/images/icons/fb.png" alt="Link to Dogwood Rescue on Facebook" class="fb"> --></a>
+					<a href="https://www.instagram.com/dogwoodrescue" target="_new">
+						<span class="fa-stack fa-sm">
+						  <i class="fas fa-circle fa-stack-2x"></i>
+						  <i class="fab fa-instagram fa-stack-1x" style="color: white"></i>
+						</span>
+					</a>
+					<a href="https://twitter.com/dogwoodrescue" target="_new">
+						<span class="fa-stack fa-sm">
+						  <i class="fas fa-circle fa-stack-2x"></i>
+						  <i class="fab fa-twitter fa-stack-1x" style="color: white"></i>
+						</span></a>
 			
 					
 				</div><!-- end social -->
-				<a href="<?php echo site_url(); ?>#give-form-100-wrap"><!-- <img src="<?php bloginfo("template_url"); ?>/images/donate.jpg" alt="Link to donation section" class="donate"> --><button class="btn donate-btn">Donate</button></a>
+				<a href="<?php echo site_url(); ?>#give-form-100-wrap"><!-- <img src="<?php bloginfo("template_url"); ?>/images/donate.jpg" alt="Link to donation section" class="donate"> --><button class="btn donate-btn justify-self-end">Donate</button></a>
 			</div>
 		<!-- </div> --><!-- .site-branding -->
 

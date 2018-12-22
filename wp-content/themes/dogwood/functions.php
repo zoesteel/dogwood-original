@@ -120,9 +120,10 @@ if( !is_admin() ){
 }
 
 function dogwood_scripts() {
-	wp_enqueue_style( 'dogwood-style', get_stylesheet_uri() );
-
+	
 	wp_enqueue_style( 'boostrapcss', get_stylesheet_directory_uri() . '/bootstrap/css/bootstrap.min.css', array(), '20181213') ;
+
+	wp_enqueue_style( 'fontawesome', 'https://use.fontawesome.com/releases/v5.6.3/css/all.css' );
 
 	wp_enqueue_style( 'slick-styles', get_stylesheet_directory_uri() . '/css/slick-theme.css', array(), $css_version);
 
@@ -142,12 +143,15 @@ function dogwood_scripts() {
 
 	wp_enqueue_script( 'dogwood-responsive-slides', get_template_directory_uri(). '/js/responsiveslides.min.js', array('jquery'), '20160620', true);
 
-		
+
 	wp_enqueue_script( 'slick', get_template_directory_uri() . '/js/slick.min.js', $js_version, true);
 
 	wp_enqueue_script( 'popper', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js', array( 'jquery'), '20181213', true);
 
 	wp_enqueue_script( 'bootstrapjs', get_template_directory_uri(). '/bootstrap/js/bootstrap.min.js', array( 'jquery'), '20181213', true);
+
+	wp_enqueue_style( 'dogwood-style', get_stylesheet_uri() );
+
 
 }
 

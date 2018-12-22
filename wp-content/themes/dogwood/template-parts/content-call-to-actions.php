@@ -21,7 +21,7 @@
 
 	?>
 
-	<div class="col-4 cta-img-container">
+	<div class="col-12 col-sm-4 cta-img-container">
 		<a href="volunteer">
 			<img src="<?php echo $cta1_img; ?>" alt="Link to Volunteer Page" class="cta-links">
 			<p class="cta-text"><?php echo $cta1_text; ?></p>
@@ -29,7 +29,7 @@
 		<!-- <div class="overlay"></div> -->
 	</div>
 
-	<div class="col-4 cta-img-container ">
+	<div class="col-12 col-sm-4 cta-img-container ">
 		<a href="foster">
 			<img src="<?php echo $cta2_img; ?>" alt="Link to Foster Page" class="cta-links">
 			<p class="cta-text"><?php echo $cta2_text; ?></p>
@@ -37,7 +37,7 @@
 		<!-- <div class="overlay"></div> -->
 	</div>
 
-	<div class="col-4 cta-img-container">
+	<div class="col-12 col-sm-4  cta-img-container">
 		<a href="adoptables">
 			<img src="<?php echo $cta3_img; ?>" alt="Link to Adoptables Page" class="cta-links">
 			<p class="cta-text"><?php echo $cta3_text; ?></p>

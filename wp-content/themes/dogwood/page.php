@@ -17,7 +17,7 @@ get_header(); ?>
 
 <?php
 	if( have_rows('heading_image')){
-				while( have_rows('heading_image')){
+			while( have_rows('heading_image')){
 	        the_row();
 	        $image = get_sub_field('image');
 		  	}
