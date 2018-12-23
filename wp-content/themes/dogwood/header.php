@@ -60,7 +60,7 @@
 						  <i class="fas fa-circle fa-stack-2x"></i>
 						  <i class="fab fa-facebook-f fa-stack-1x" style="color: white"></i>
 						</span>
-<!-- <img src="<?php bloginfo("template_url"); ?>/images/icons/fb.png" alt="Link to Dogwood Rescue on Facebook" class="fb"> --></a>
+					</a>
 					<a href="https://www.instagram.com/dogwoodrescue" target="_new">
 						<span class="fa-stack fa-sm">
 						  <i class="fas fa-circle fa-stack-2x"></i>
@@ -75,7 +75,17 @@
 			
 					
 				</div><!-- end social -->
-				<a href="<?php echo site_url(); ?>#give-form-100-wrap"><!-- <img src="<?php bloginfo("template_url"); ?>/images/donate.jpg" alt="Link to donation section" class="donate"> --><button class="btn donate-btn justify-self-end">Donate</button></a>
+				<a href="
+
+					<?php if ( is_front_page() || is_home() ) { 
+							echo '#give-form-100-wrap'; 
+						} else { 
+							echo home_url(); 
+							echo '#give-form-100-wrap'; 
+						} 
+					?>">
+					<button class="btn donate-btn justify-self-end">Donate</button>
+				</a>
 			</div>
 		<!-- </div> --><!-- .site-branding -->
 

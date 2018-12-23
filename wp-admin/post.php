@@ -113,14 +113,14 @@ case 'edit':
 		wp_die( __( 'You attempted to edit an item that doesn&#8217;t exist. Perhaps it was deleted?' ) );
 
 	if ( ! $post_type_object )
-		wp_die( __( 'Unknown post type.' ) );
+		wp_die( __( 'Invalid post type.' ) );
 
 	if ( ! in_array( $typenow, get_post_types( array( 'show_ui' => true ) ) ) ) {
-		wp_die( __( 'You are not allowed to edit posts in this post type.' ) );
+		wp_die( __( 'Sorry, you are not allowed to edit posts in this post type.' ) );
 	}
 
 	if ( ! current_user_can( 'edit_post', $post_id ) )
-		wp_die( __( 'You are not allowed to edit this item.' ) );
+		wp_die( __( 'Sorry, you are not allowed to edit this item.' ) );
 
 	if ( 'trash' == $post->post_status )
 		wp_die( __( 'You can&#8217;t edit this item because it is in the Trash. Please restore it and try again.' ) );
@@ -150,22 +150,28 @@ case 'edit':
 		$post_new_file = "post-new.php?post_type=$post_type";
 	}
 
+	/**
+	 * Allows replacement of the editor.
+	 *
+	 * @since 4.9.0
+	 *
+	 * @param boolean      Whether to replace the editor. Default false.
+	 * @param object $post Post object.
+	 */
+	if ( apply_filters( 'replace_editor', false, $post ) === true ) {
+		break;
+	}
+
+	if ( use_block_editor_for_post( $post ) ) {
+		include( ABSPATH . 'wp-admin/edit-form-blocks.php' );
+		break;
+	}
+
 	if ( ! wp_check_post_lock( $post->ID ) ) {
 		$active_post_lock = wp_set_post_lock( $post->ID );
 
 		if ( 'attachment' !== $post_type )
 			wp_enqueue_script('autosave');
-	}
-
-	if ( is_multisite() ) {
-		add_action( 'admin_footer', '_admin_notice_post_locked' );
-	} else {
-		$check_users = get_users( array( 'fields' => 'ID', 'number' => 2 ) );
-
-		if ( count( $check_users ) > 1 )
-			add_action( 'admin_footer', '_admin_notice_post_locked' );
-
-		unset( $check_users );
 	}
 
 	$title = $post_type_object->labels->edit_item;
@@ -214,10 +220,10 @@ case 'trash':
 		wp_die( __( 'The item you are trying to move to the Trash no longer exists.' ) );
 
 	if ( ! $post_type_object )
-		wp_die( __( 'Unknown post type.' ) );
+		wp_die( __( 'Invalid post type.' ) );
 
 	if ( ! current_user_can( 'delete_post', $post_id ) )
-		wp_die( __( 'You are not allowed to move this item to the Trash.' ) );
+		wp_die( __( 'Sorry, you are not allowed to move this item to the Trash.' ) );
 
 	if ( $user_id = wp_check_post_lock( $post_id ) ) {
 		$user = get_userdata( $user_id );
@@ -237,10 +243,10 @@ case 'untrash':
 		wp_die( __( 'The item you are trying to restore from the Trash no longer exists.' ) );
 
 	if ( ! $post_type_object )
-		wp_die( __( 'Unknown post type.' ) );
+		wp_die( __( 'Invalid post type.' ) );
 
 	if ( ! current_user_can( 'delete_post', $post_id ) )
-		wp_die( __( 'You are not allowed to restore this item from the Trash.' ) );
+		wp_die( __( 'Sorry, you are not allowed to restore this item from the Trash.' ) );
 
 	if ( ! wp_untrash_post( $post_id ) )
 		wp_die( __( 'Error in restoring from Trash.' ) );
@@ -255,10 +261,10 @@ case 'delete':
 		wp_die( __( 'This item has already been deleted.' ) );
 
 	if ( ! $post_type_object )
-		wp_die( __( 'Unknown post type.' ) );
+		wp_die( __( 'Invalid post type.' ) );
 
 	if ( ! current_user_can( 'delete_post', $post_id ) )
-		wp_die( __( 'You are not allowed to delete this item.' ) );
+		wp_die( __( 'Sorry, you are not allowed to delete this item.' ) );
 
 	if ( $post->post_type == 'attachment' ) {
 		$force = ( ! MEDIA_TRASH );
@@ -280,7 +286,30 @@ case 'preview':
 	wp_redirect($url);
 	exit();
 
+case 'toggle-custom-fields':
+	check_admin_referer( 'toggle-custom-fields' );
+
+	$current_user_id = get_current_user_id();
+	if ( $current_user_id ) {
+		$enable_custom_fields = (bool) get_user_meta( $current_user_id, 'enable_custom_fields', true );
+		update_user_meta( $current_user_id, 'enable_custom_fields', ! $enable_custom_fields );
+	}
+
+	wp_safe_redirect( wp_get_referer() );
+	exit();
+
 default:
+	/**
+	 * Fires for a given custom post action request.
+	 *
+	 * The dynamic portion of the hook name, `$action`, refers to the custom post action.
+	 *
+	 * @since 4.6.0
+	 *
+	 * @param int $post_id Post ID sent with the request.
+	 */
+	do_action( "post_action_{$action}", $post_id );
+
 	wp_redirect( admin_url('edit.php') );
 	exit();
 } // end switch

@@ -4,8 +4,6 @@
     ----------------------------------------------------------*/
 ?>
 
-<div class="row call-to-actions ">
-
 	<?php 
 
 	$cta1_img = get_field('cta1_img', $post->ID);
@@ -44,5 +42,3 @@
 		</a>
 		<!-- <div class="overlay"></div> -->
 	</div>
-
-</div>

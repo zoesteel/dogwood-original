@@ -24,10 +24,11 @@ get_header(); ?>
             </div><!-- col -->
 
                 <!-- Icons Legend -->
-            <div class="icons-legend col-12">
+
+            <a data-toggle="collapse" data-target="#legend" class="icons-legend col-12">
                 <h3>Icons Legend</h3>
-            </div>
-                <div class="col-6 d-flex align-items-center justify-content-center">
+            </a>
+                <div class="collapse col-6" id="legend">
                     <table>
                         <tr>
                             <td class="icon-container"><img src="<?php bloginfo("template_url"); ?>/images/icons/small-dog-text.png" class="adoptable-size"/></td>

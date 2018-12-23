@@ -587,7 +587,7 @@ a:active {
     height: 42px;
     line-height: 42px;
     background-color: var(--light-green);
-    color: var(--dark-green);
+    color: #000;
     margin-bottom: 3vh;
 }
 
@@ -627,7 +627,7 @@ a:active {
     text-decoration: none;
     color: #545F5E;
     font-size: 0.8em;
-    font-weight: 600;
+    font-weight: 500;
     text-transform: uppercase;
 }
 
@@ -1160,13 +1160,9 @@ header h1{
 
 /* Adoptable Info */
 .adoptable-info {
-    /*width: 35vw;*/
-    /*float: right;*/
     margin-top: 1em;
     padding-top: 1.5em;
     font-size: 1.25rem;
-    /*border: 3px solid #dbe2d2;*/
-    /*text-indent:10px;*/
 }
 
 .table-adoptable-info {
@@ -1258,39 +1254,73 @@ section.adoptable-story h2 {
 
 /*----------------
 	## Donation Bar
-	-----------------*/
+-----------------*/
 
 .give-form-wrap {
-    font-family: 'Raleway Regular', 'Open Sans', Arial, sans-serif;
-    background-color: #e1e8dc;
-/*     width: 80vw; */
-    height: 160px;
-    /*box-sizing:border-box;*/
-    padding: 5px;
-    clear: both;
-    margin-top: 3em;
+    font-family: var(--main-font);
+    /*background-color: var(--light-green);*/
+    border-radius: 5px;
+    /*height: 160px;*/
+    padding-top: 1.5rem;
+    margin-top: 3em;/*
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;*/
+
+    @media (min-width: 576px) {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
 .give-form-title {
+    font-family: var(--heading-font);
+    text-align: center;
     display: inline-block;
-    padding: 20px 60px 0;
-    color: #545f5e;
-    font-size: 24px;
+    font-size: 2rem;
+    font-weight: 500;
 }
+
+.give-form {
+    background-color: var(--light-green);
+    padding: 9rem;
+    border-radius: 5px;
+
+     @media (min-width: 576px) {
+        display: flex;
+        justify-content: center;
+    }
+}
+
 .gform_title{
     text-align:center;
 }
+
+.give-form ul {
+    display: flex;
+    /*flex-direction: row;*/
+    justify-content: space-between;
+}
+
+#give-recurring-form, form.give-form, form[id*=give-form] {
+    padding: 4rem;
+}
+
+/*
+.give-form ul li:hover {
+    background-color: var(--bright-green);
+}
+/*
 .entry_content {
     background-color: #b3cdb8;
     color: #342F38;
-}
+}*/
 
-.give-form-content-wrap {
-    margin: 0 0 30px 0;
-    padding: 0;
-    height: 30px;
-}
 
+/*
 .give-form-content-wrap p {
     color: #545f5e;
     font-size: 16px;
@@ -1299,17 +1329,13 @@ section.adoptable-story h2 {
     padding-bottom: 30px;
     margin-left: 65px;
 }
-
+/*
 #give-donation-level-button-wrap {
-    *zoom: 1;
+    zoom: 1;
     margin: 20px 0 5px 15px;
     padding: 0;
     clear: both;
     list-style: none;
-    box-shadow: none;
-    border-radius: none;
-    display: flex;
-    justify-content: space-around;
     margin-top: 0;
     width: 60%;
     margin-left: 5%;
@@ -1331,7 +1357,6 @@ section.adoptable-story h2 {
     list-style-image: none;
     float: left;
     margin: 0 5px 5px 0;
-/*    background-color: #fff;*/
     font-size: 18px;
     width: 100px;
     height: 35px;
@@ -1340,61 +1365,42 @@ section.adoptable-story h2 {
 .give_terms_links {
     float: right;
 }
-
+*/
 .give-donation-level-btn {
-    width: 100px;
-    height: 35px;
-    margin-top: 20px;
-    font-size: 16px;
-    font-weight: bold;
-    position: absolute;
+    font-family: var(--main-font);
+    font-size: 1rem;
+    border: none;
     background-color: #fff;
-    border-radius: none;
-    box-shadow: none;
-    border: 1px solid #95ac97;
-    color: #545F5E;
+    box-shadow: var(--box-shadow);
+    color: var(--dark-green);
 }
 
 .give-donation-level-btn:hover,
 .give-donation-level-btn:focus,
 .give-donation-level-btn:active {
-    background: #95ac97;
+    background: var(--bright-green);
     color: #fff;
-    box-shadow: none;
-    border-radius: none;
-    border: 1px solid #95ac97;
 }
 
 .give-btn-modal {
-    background: #95ac97;
-    border: 1px solid #ccc;
+    background: var(--blue-link);
     color: #fff;
-    width: 160px;
-    height: 35px;
+    width: 9.5rem;
+    height: 2.5rem;
     padding: 8px 10px;
     cursor: pointer;
-    line-height: 1.2em;
-    font-size: 14px;
-    position: relative;
-    box-shadow: none;
-    border-radius: none;
-    bottom: 3.3em;
-    left: 55vw;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    -o-transition:.5s;
-    -ms-transition:.5s;
-    -moz-transition:.5s;
-    -webkit-transition:.5s;
-    transition:.5s;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    box-shadow: var(--box-shadow);
+    border: none;
 }
 
 .give-btn-modal:hover {
-    background: #545F5E;
-    color: #fff;
-    box-shadow: none;
-    border-radius: none;
+    background: var(--blue-hover);
 }
+
+/*
 
 div#give-sidebar-left {
     width: 5%;
@@ -1406,11 +1412,13 @@ div#give-sidebar-left {
     float: right;
 }
 
+
+
 form[id*='give-form'] .give-donation-amount {
-    /*  margin: 20px 100px 15px;  */
+    /*  margin: 20px 100px 15px;
     width: 300px;
-    position: relative;
-    /*top:62px;	right:-50px;*/
+    position: relative;  */
+    /*top:62px;	right:-50px;
     margin-left: 55vw;
     margin-top: -70px;
 }
@@ -1421,10 +1429,11 @@ form[id*='give-form'] #give-final-total-wrap {
     *zoom: 1;
 }
 
+*/
+/*
 form[id*='give-form'] #give-final-total-wrap .give-donation-total-label {
     background-color: #f2f2f2;
-    border-top: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
+    border: none;
     color: #333;
     margin: 0;
     padding: 0 12px;
@@ -1435,33 +1444,30 @@ form[id*='give-form'] #give-final-total-wrap .give-donation-total-label {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    border: 1px solid #ccc;
 }
-
+*/
 form[id*='give-form'] .give-hidden,
 #give-recurring-form .give-hidden,
 form.give-form .give-hidden {
     display: none;
 }
 
+
+
+
 form[id*='give-form'] .give-donation-amount .give-currency-symbol.give-currency-position-before {
-    border-left: 1px solid #ccc;
-    border-right: none;
+    border: none;
 }
 
 form[id*='give-form'] .give-donation-amount .give-currency-symbol.give-currency-position-after {
-    border-left: none;
-    border-right: 1px solid #ccc;
+   border: none;
 }
 
 form[id*='give-form'] .give-donation-amount .give-currency-symbol {
-    background-color: #f2f2f2;
-    border-top: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
-    color: #333;
+    background-color: transparent;
+    border: none;
     margin: 0;
     padding: 0 12px;
-
     height: 35px;
     line-height: 35px;
     font-size: 18px;
@@ -1470,21 +1476,22 @@ form[id*='give-form'] .give-donation-amount .give-currency-symbol {
     box-sizing: border-box;
 }
 
+
 form[id*='give-form'] .give-donation-amount #give-amount,
 form[id*='give-form'] .give-donation-amount #give-amount-text {
-   
-    border: 1px solid #ccc;
     background: #FFF;
-    border-radius: 0;
-    height: 35px;
+    border-radius: 4px;
+    border: none;
+    box-shadow: var(--box-shadow);
+    /*height: 35px;
     line-height: 35px;
     padding: 0 12px;
     margin: 0;
-    font-size: 18px;
+    font-size: 1.1rem;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    width: 125px;
+    box-sizing: border-box;*/
+    /*width: 125px;*/
 }
 
 
@@ -2309,22 +2316,35 @@ label .gfield_label{
 ----------------------------- */
     .icons-legend h3 {
         cursor: pointer;
-        padding-top: 1em;
-        padding-bottom: 1em;
-        background-color: #e1e8dc;
+        padding-top: .1em;
+        padding-bottom: .1em;
+        background-color: var(--med-green);
     }
-    .icons-legend  {
+
+    .icons-legend:after {
+            /* symbol for "opening" panels */
+            font-family: 'Font Awesome';  /* essential for enabling glyphicon */
+            content: "\f078";    /* adjust as needed, taken from bootstrap.css */
+            float: right;        /* adjust as needed */
+            color: grey;         /* adjust as needed */
+        }
+        .icons-legend.collapsed:after {
+            /* symbol for "collapsed" panels */
+            content: "\f054";    /* adjust as needed, taken from bootstrap.css */
+        }
+
+  /*  .icons-legend  {
         display: block;
-        background-color: transparent;
+        background-color: var(--light-green);
         color: #3f3e3e;
         text-align: center;
         clear: both;
     }
     .icon-container {
         padding-left: 4em;
-    }
+    }*/
 
-@media only screen and (max-width: 1300px) {
+/*@media only screen and (max-width: 1300px) {
     .icons-legend h3 {
         cursor: pointer;
         padding-top: 1em;
@@ -2335,11 +2355,11 @@ label .gfield_label{
         display: block;
         background-color: transparent;
         color: #3f3e3e;
-        /*width: 70vw;*/
+        /*width: 70vw;
         text-align: center;
         clear: both;
     }
-}
+}*/
 /*
 @media only screen and (max-width: 868px) {
     .icons-legend {

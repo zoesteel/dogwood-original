@@ -1,15 +1,20 @@
 /* global plugininstallL10n, tb_click, tb_remove */
 
-/* Plugin Browser Thickbox related JS*/
+/**
+ * Functionality for the plugin install screens.
+ */
 var tb_position;
 jQuery( document ).ready( function( $ ) {
 
 	var tbWindow,
-		$focusedBefore,
 		$iframeBody,
 		$tabbables,
 		$firstTabbable,
-		$lastTabbable;
+		$lastTabbable,
+		$focusedBefore = $(),
+		$uploadViewToggle = $( '.upload-view-toggle' ),
+		$wrap = $ ( '.wrap' ),
+		$body = $( document.body );
 
 	tb_position = function() {
 		var width = $( window ).width(),
@@ -51,8 +56,18 @@ jQuery( document ).ready( function( $ ) {
 	 * Custom events: when a Thickbox iframe has loaded and when the Thickbox
 	 * modal gets removed from the DOM.
 	 */
-	$( 'body' )
+	$body
 		.on( 'thickbox:iframe:loaded', tbWindow, function() {
+			/*
+			 * Return if it's not the modal with the plugin details iframe. Other
+			 * thickbox instances might want to load an iframe with content from
+			 * an external domain. Avoid to access the iframe contents when we're
+			 * not sure the iframe loads from the same domain.
+			 */
+			if ( ! tbWindow.hasClass( 'plugin-details-modal' ) ) {
+				return;
+			}
+
 			iframeLoaded();
 		})
 		.on( 'thickbox:removed', function() {
@@ -131,8 +146,13 @@ jQuery( document ).ready( function( $ ) {
 		}
 	}
 
-	// Open the Plugin details modal.
-	$( '.thickbox.open-plugin-details-modal' ).on( 'click', function( e ) {
+	/*
+	 * Open the Plugin details modal. The event is delegated to get also the links
+	 * in the plugins search tab, after the AJAX search rebuilds the HTML. It's
+	 * delegated on the closest ancestor and not on the body to avoid conflicts
+	 * with other handlers, see Trac ticket #43082.
+	 */
+	$( '.wrap' ).on( 'click', '.thickbox.open-plugin-details-modal', function( e ) {
 		// The `data-title` attribute is used only in the Plugin screens.
 		var title = $( this ).data( 'title' ) ? plugininstallL10n.plugin_information + ' ' + $( this ).data( 'title' ) : plugininstallL10n.plugin_modal_label;
 
@@ -144,11 +164,13 @@ jQuery( document ).ready( function( $ ) {
 
 		tb_click.call(this);
 
-		// Set ARIA role and ARIA label.
-		tbWindow.attr({
-			'role': 'dialog',
-			'aria-label': plugininstallL10n.plugin_modal_label
-		});
+		// Set ARIA role, ARIA label, and add a CSS class.
+		tbWindow
+			.attr({
+				'role': 'dialog',
+				'aria-label': plugininstallL10n.plugin_modal_label
+			})
+			.addClass( 'plugin-details-modal' );
 
 		// Set title attribute on the iframe.
 		tbWindow.find( '#TB_iframeContent' ).attr( 'title', title );
@@ -174,4 +196,25 @@ jQuery( document ).ready( function( $ ) {
 		$( '#section-holder div.section' ).hide(); // Hide 'em all.
 		$( '#section-' + tab ).show();
 	});
+
+	/*
+	 * When a user presses the "Upload Plugin" button, show the upload form in place
+	 * rather than sending them to the devoted upload plugin page.
+	 * The `?tab=upload` page still exists for no-js support and for plugins that
+	 * might access it directly. When we're in this page, let the link behave
+	 * like a link. Otherwise we're in the normal plugin installer pages and the
+	 * link should behave like a toggle button.
+	 */
+	if ( ! $wrap.hasClass( 'plugin-install-tab-upload' ) ) {
+		$uploadViewToggle
+			.attr({
+				role: 'button',
+				'aria-expanded': 'false'
+			})
+			.on( 'click', function( event ) {
+				event.preventDefault();
+				$body.toggleClass( 'show-upload-view' );
+				$uploadViewToggle.attr( 'aria-expanded', $body.hasClass( 'show-upload-view' ) );
+			});
+	}
 });

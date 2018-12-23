@@ -53,7 +53,8 @@
 						</span></a>
 			</div> <!-- .social-footer -->
 
- 			<div class="designers"><p>Website by: <a href="http://ahon.htpwebdesign.ca" rel="designer" target="_new">Alex</a>, <a href="http://mshafiq.htpwebdesign.ca/" target="new" rel="designer">Maida</a>, and <a href="http://zoesteel.com" rel="designer" target="_new">Zoe</a></p>
+ 			<div class="designers"><p>&copy; <?php echo date(Y); ?> Dogwood Rescue Society</p>
+ 				<p>Website design: <a href="http://ahon.htpwebdesign.ca" rel="designer" target="_new">Alex</a>, <a href="http://mshafiq.htpwebdesign.ca/" target="new" rel="designer">Maida</a>, and <a href="http://zoesteel.com" rel="designer" target="_new">Zoe</a></p>
 			</div>
 
 		</div><!-- .site-info -->
