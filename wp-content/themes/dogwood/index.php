@@ -15,9 +15,27 @@
 get_header(); ?>
 
 
-<img src="<?php bloginfo('template_directory'); ?>/images/headings/happytails-heading-1.jpg" class='heading-image' alt="Happy Tails Header"/>
-<div class="container">
-	<h1 class="happytails-title">Happy Tails</h1>
+<!-- <img src="<?php bloginfo('template_directory'); ?>/images/headings/happytails-heading-1.jpg" class='heading-image' alt="Happy Tails Header"/> -->
+
+<?php  
+$heading_img = get_field('heading_image'); 
+$heading_title = get_field('heading_title'); 
+
+	
+?>
+<div class="heading-banner">
+
+	<img src="<?php echo $heading_img; ?>" class="heading-img" />
+	<div class="container-fluid heading-title-bg">
+		<div class="container">
+			<div class="row">
+				<h1 class="col-12 heading-title">Happy Tails</h1>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container"><!-- 
+	<h1 class="happytails-title">Happy Tails</h1> -->
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 			<div class="row">

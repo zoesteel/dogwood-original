@@ -9,7 +9,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" class="blog-post" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php
 			if ( is_single() ) {
@@ -33,7 +33,7 @@
 				/* translators: %s: Name of current post. */
 				wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'dogwood' ), array( 'span' => array( 'class' => array() ) ) ),
 				the_title( '<span class="screen-reader-text">"', '"</span>', false ),
-				the_post_thumbnail( 'large' )
+				the_post_thumbnail( 'large', array('class' => 'blog-img p-0 col-12 col-sm-6') )
 			) );
 
 			wp_link_pages( array(

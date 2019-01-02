@@ -115,7 +115,7 @@ audio:not([controls]) {
 template {
     display: none;
 }
-
+/*
 a {
     color: var(--blue-link);
     background-color: transparent;
@@ -126,7 +126,7 @@ a:active,
 a:hover {
     outline: 0;
     color: var(--blue-hover);
-}
+}*/
 
 abbr[title] {
     border-bottom: 1px dotted;
@@ -143,7 +143,7 @@ dfn {
 
 h1 {
     font-size: 2em;
-    margin: 0.67em 0;
+    /*margin: 0.67em 0;*/
 }
 
 mark {
@@ -290,7 +290,7 @@ th {
 
 /*--------------
 	# Typography
-	---------------*/
+---------------*/
 
 body,
 button,
@@ -545,8 +545,6 @@ textarea {
 	## Links
 ----------------------*/
 
-
-
 a {
     color: var(--blue-link);
     font-weight: bold;
@@ -558,7 +556,7 @@ a {
 }
 
 a:visited {
-    color: var(--blue-hover);
+    color: var(--blue-link);
 }
 
 a:hover,
@@ -588,7 +586,6 @@ a:active {
     line-height: 42px;
     background-color: var(--light-green);
     color: #000;
-    margin-bottom: 3vh;
 }
 
 .main-navigation ul {
@@ -631,6 +628,10 @@ a:active {
     text-transform: uppercase;
 }
 
+.main-navigation a:focus {
+    color: var(--dark-green);
+}
+
 /* Sub Menu */
 .main-navigation ul ul {
     float: left;
@@ -656,11 +657,6 @@ a:active {
     padding-left: 0;
     margin-left: 0;
     border: none;
-}
-.main-navigation li:hover > a,
-.main-navigation li.focus > a {
-    color: #dbe2d2;
-
 }
 .main-navigation ul ul :hover > a,
 .main-navigation ul ul .focus > a {
@@ -891,6 +887,7 @@ a:active {
 }
 
 
+
 /*------------------
 	## Comments
 	-------------------*/
@@ -1103,21 +1100,21 @@ header h1{
     padding-top: 0.75rem;
 }
 
-.adoptable-name{
-    text-align:center;
-    font-size:34px;
-    background-color: #dbe2d2;
-    color:#545f5e;
+.adoptable-name {
+    text-align: center;
+    font-size: 1.75rem;
+    background-color: var(--med-green);
+    color: var(--dark-green);
 }
 
 .adoptable h2 {
     text-align: center;
 }
 
-.adoptable-story h2{
-    text-align:center;
-    background-color:#dbe2d2;
-    color:#545f5e;
+.adoptable-story h2 {
+    text-align: center;
+    background-color: var(--light-green);;
+    color: var(--dark-green);
 
 }
 
@@ -1130,8 +1127,8 @@ header h1{
 }
 
 .resource h1{
-    text-align:left;
-    font-size:1.5em;
+    text-align: left;
+    font-size: 1.5em;
 }
 
 /*-----------------------
@@ -1150,11 +1147,11 @@ header h1{
 .slide-container {
     width: 30vw;
     float: left;
-    margin-top:1em;
+    margin-top: 1em;
 }
 
 #adoptable-slides-pager{
-    margin-top:2em;
+    margin-top: 2em;
     list-style-type: none;
 }
 
@@ -1175,6 +1172,11 @@ header h1{
 }
 
 /* Icons Container */
+
+.legend-container {
+    font-size: 0.85em;
+}
+
 div.icons-container{
     float:left;
     position:relative;
@@ -1262,18 +1264,19 @@ section.adoptable-story h2 {
     border-radius: 5px;
     /*height: 160px;*/
     padding-top: 1.5rem;
+    text-align: center;
     margin-top: 3em;/*
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;*/
 
-    @media (min-width: 576px) {
+    /*@media (min-width: 576px) {
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: center;
-    }
+    }*/
 }
 
 .give-form-title {
@@ -1289,10 +1292,9 @@ section.adoptable-story h2 {
     padding: 9rem;
     border-radius: 5px;
 
-     @media (min-width: 576px) {
         display: flex;
         justify-content: center;
-    }
+
 }
 
 .gform_title{
@@ -1302,7 +1304,7 @@ section.adoptable-story h2 {
 .give-form ul {
     display: flex;
     /*flex-direction: row;*/
-    justify-content: space-between;
+    justify-content: center;
 }
 
 #give-recurring-form, form.give-form, form[id*=give-form] {
@@ -1394,6 +1396,7 @@ section.adoptable-story h2 {
     font-weight: 500;
     box-shadow: var(--box-shadow);
     border: none;
+    justify-self: center;
 }
 
 .give-btn-modal:hover {
@@ -1452,9 +1455,6 @@ form.give-form .give-hidden {
     display: none;
 }
 
-
-
-
 form[id*='give-form'] .give-donation-amount .give-currency-symbol.give-currency-position-before {
     border: none;
 }
@@ -1483,6 +1483,7 @@ form[id*='give-form'] .give-donation-amount #give-amount-text {
     border-radius: 4px;
     border: none;
     box-shadow: var(--box-shadow);
+    justify-self: flex-end;
     /*height: 35px;
     line-height: 35px;
     padding: 0 12px;
@@ -1494,8 +1495,6 @@ form[id*='give-form'] .give-donation-amount #give-amount-text {
     /*width: 125px;*/
 }
 
-
-/*---------------------------------------------------------------------*/
 
 
 /*-------------------
@@ -1796,6 +1795,7 @@ label .gfield_label{
     border-radius: 5px;
     height: 300px;
     object-fit: cover;
+    margin-bottom: 1rem;
 }
 
 .cta-img-container {
@@ -1839,6 +1839,32 @@ label .gfield_label{
     border-radius: 5px;
 }
 
+.heading-banner {
+    position: relative;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.heading-img {
+    height: 270px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.heading-title-bg {
+    background-color: var(--dark-green); 
+    width: 100%;
+    height: 3rem;
+    position: absolute;
+    opacity: 0.65;  
+    bottom: 0;
+    padding: 0.25rem;
+}
+
+.heading-title {
+    color: #fff;
+}
+
 /*------------------------------------
 	##	END Dogwood Content Styles
 -----------------------------------*/
@@ -1862,7 +1888,7 @@ label .gfield_label{
 
 .post img {
     float: left;
-    margin-right: 1.2em;
+
 }
 
 
@@ -1871,6 +1897,45 @@ label .gfield_label{
     width: 80%;
     margin: 0 auto;
 }
+
+
+.entry-header {
+    /*background-color: var(--light-green);
+    color: #545f5e;
+    font-size: 24px;
+    padding-left: 10px;
+    font-weight: bold;
+    position: relative;
+    bottom: 0*/
+}
+
+.blog-post {
+    box-shadow: var(--box-shadow);
+    border-radius: 5px;
+    background-color: #f6f9f7;
+    margin-bottom: 2rem;
+    padding: 0.5rem;
+}
+
+.blog-img {
+    /*object-fit: contain;*/
+    /*width: auto;*/
+    /*overflow: hidden;*/
+    /*position: relative;*/
+    /*height: 400px;*/
+}
+
+
+.entry-header {
+    /*height: 300px;    */
+    background-color: none;
+    color: #000;
+    font-size: 2rem;
+    font-weight: 500;
+   
+}
+
+
 /*--------------------------------
 	# Instagram
 	-------------------------------*/
@@ -1912,7 +1977,7 @@ label .gfield_label{
     color: var(--light-green);
 }
 
-.site-info a:hover, a:focus, a:active {
+.site-info a:hover, .site-info a:focus, .site-info a:active {
     color: #95ad97;
 }
 
@@ -1997,21 +2062,6 @@ label .gfield_label{
 /*----------------------------------------------
 # Index page style
 ------------------------------------------------*/
-
-.entry-header{
-    background-color: var(--light-green);
-    color:#545f5e;
-    font-size:24px;
-    padding-left:10px;
-    font-weight:bold;
-}
-
-.entry-content img{
-
-    height:auto;
-    overflow:hidden;
-}
-
 
 /* -------------------------
    Media Queries
@@ -2266,9 +2316,6 @@ label .gfield_label{
         padding-left: 3em;
         background-color: white;
     }
-    
-    
-   
 
     /* gravity forms*/
 
@@ -2314,23 +2361,41 @@ label .gfield_label{
 /*----------------------------
     ## Responsive Icon Legend
 ----------------------------- */
+
+  .icon::before {
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+  }
     .icons-legend h3 {
         cursor: pointer;
         padding-top: .1em;
         padding-bottom: .1em;
         background-color: var(--med-green);
+        color: #fff;
+        text-align: center;
+        font-size: 1.5rem;
     }
 
-    .icons-legend:after {
+    .icons-legend h3:before {
             /* symbol for "opening" panels */
-            font-family: 'Font Awesome';  /* essential for enabling glyphicon */
-            content: "\f078";    /* adjust as needed, taken from bootstrap.css */
-            float: right;        /* adjust as needed */
-            color: grey;         /* adjust as needed */
+            font-family: 'FontAwesome';
+            content: "\f078";    
+            float: right;        
+            color: #fff;         
+            padding-right: 1rem;
+
         }
         .icons-legend.collapsed:after {
             /* symbol for "collapsed" panels */
-            content: "\f054";    /* adjust as needed, taken from bootstrap.css */
+            font-family: 'FontAwesome';
+            content: "\f056";   
+            float: right;        
+            padding-right: 1rem;
+            color: #fff;  
+
         }
 
   /*  .icons-legend  {

@@ -16,20 +16,35 @@ get_header(); ?>
 
 
 <?php
-	if( have_rows('heading_image')){
-			while( have_rows('heading_image')){
-	        the_row();
-	        $image = get_sub_field('image');
-		  	}
+	// if( have_rows('heading_image')){
+	// 		while( have_rows('heading_image')){
+	//         the_row();
+	//         $image = get_sub_field('image');
+	// 	  	}
 	
-	   	echo "<img class='heading-image' src='" . $image . "'/>";
-   	}
-?>
+	//    	echo "<img class='heading-image' src='" . $image . "'/>";
+ //   	}
+ 
+$heading_img = get_field('heading_image'); 
+$heading_title = get_field('heading_title'); 
 
+	
+?>
+<div class="heading-banner">
+
+	<img src="<?php echo $heading_img; ?>" class="heading-img" />
+	<div class="container-fluid heading-title-bg">
+		<div class="container">
+			<div class="row">
+				<h1 class="col-12 heading-title"><?php the_title(); ?></h1>
+			</div>
+		</div><!-- end container -->
+	</div><!-- end heading-title-bg -->
+</div>
 	<div id="primary" class="content-area container">
 		<main id="main" class="site-main" role="main">
 			<div class="row">
-				<div class="entry-content col-12">
+			
 					<?php
 					while ( have_posts() ) : the_post();
 

@@ -6,16 +6,18 @@
 
 	<?php 
 
-	$cta1_img = get_field('cta1_img', $post->ID);
-	$cta1_text = get_field('cta1_text', $post->ID);
+	$post_id = get_option( 'page_on_front' );
+
+	$cta1_img = get_field('cta1_img', $post_id);
+	$cta1_text = get_field('cta1_text', $post_id);
 
 
-	$cta2_img = get_field('cta2_img', $post->ID);
-	$cta2_text = get_field('cta2_text', $post->ID);
+	$cta2_img = get_field('cta2_img',  $post_id);
+	$cta2_text = get_field('cta2_text', $post_id);
 
 
-	$cta3_img = get_field('cta3_img', $post->ID);
-	$cta3_text = get_field('cta3_text', $post->ID);
+	$cta3_img = get_field('cta3_img', $post_id);
+	$cta3_text = get_field('cta3_text', $post_id);
 
 	?>
 
