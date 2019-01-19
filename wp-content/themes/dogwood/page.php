@@ -44,7 +44,7 @@ $heading_title = get_field('heading_title');
 	<div id="primary" class="content-area container">
 		<main id="main" class="site-main" role="main">
 			<div class="row">
-			
+				<div class="col-12">
 					<?php
 					while ( have_posts() ) : the_post();
 
@@ -55,7 +55,7 @@ $heading_title = get_field('heading_title');
 							get_template_part( 'template-parts/content', 'education-resources');
 					endwhile; // End of the loop.
 					?>
-				</div><!-- end col-->
+				 </div> <!-- end col -->
 			</div><!-- end row -->
 		</main><!-- #main -->
 	</div><!-- #primary -->
