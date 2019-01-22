@@ -16,9 +16,9 @@ get_header(); ?>
 
 <div id="primary" class="content-area">
 	<main id="main" class="site-main" role="main">
-		<div class="container">
+		<div class="container-fluid">
 			<div class="row">
-				<div class="col-12 front-pg-slider">
+				<div class="col-12 front-pg-slider d-flex justify-items-center">
 					<!-- <div class=""> -->
 					  <div><img src="<?php echo get_template_directory_uri(); ?>/images/dogwood-home-slider.jpg" /></div>
 					  <div>your content</div>
@@ -27,6 +27,8 @@ get_header(); ?>
 				</div><!-- end col-12 -->
 
 			</div><!-- end row -->
+		</div>
+		<div class="container">
 			<div class="row call-to-actions">
 				<?php
 				// Display Size and Preference

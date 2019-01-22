@@ -1256,11 +1256,11 @@ section.adoptable-story h2 {
 -----------------*/
 
 .give-form-wrap {
-    display: none;
+    /*display: none;*/
     font-family: var(--main-font);
     /*background-color: var(--light-green);*/
     border-radius: 5px;
-    /*height: 160px;*/
+    /*height: 160px;
     padding-top: 1.5rem;
     text-align: center;
     margin-top: 3em;/*
@@ -1287,15 +1287,15 @@ section.adoptable-story h2 {
 
 .give-form {
     background-color: var(--light-green);
-    padding: 9rem;
+   /* padding: 9rem;
     border-radius: 5px;
     display: flex;
-    justify-content: center;
+    justify-content: center;*/
 
 }
 
 .gform_title{
-    text-align:center;
+    text-align: center;
 }
 
 .give-form ul {
@@ -1305,32 +1305,32 @@ section.adoptable-story h2 {
 }
 
 #give-recurring-form, form.give-form, form[id*=give-form] {
-    padding: 4rem;
+    padding: 3.75rem;
 }
 
-/*
+
 .give-form ul li:hover {
     background-color: var(--bright-green);
 }
-/*
+
 .entry_content {
-    background-color: #b3cdb8;
-    color: #342F38;
-}*/
+   /* background-color: #b3cdb8;
+    color: #342F38;*/
+}
 
 
-/*
+
 .give-form-content-wrap p {
-    color: #545f5e;
+    /* color: #545f5e;
     font-size: 16px;
     display: inline-block;
     padding-bottom: 0;
     padding-bottom: 30px;
-    margin-left: 65px;
+    margin-left: 65px;*/
 }
-/*
+
 #give-donation-level-button-wrap {
-    zoom: 1;
+   /* zoom: 1;
     margin: 20px 0 5px 15px;
     padding: 0;
     clear: both;
@@ -1338,7 +1338,7 @@ section.adoptable-story h2 {
     margin-top: 0;
     width: 60%;
     margin-left: 5%;
-    font-size: 14px;
+    font-size: 14px;*/
 }
 
 #give-donation-level-button-wrap:before,
@@ -1352,19 +1352,19 @@ section.adoptable-story h2 {
 }
 
 #give-donation-level-button-wrap > li {
-    list-style-type: none;
+  /*  list-style-type: none;
     list-style-image: none;
     float: left;
     margin: 0 5px 5px 0;
     font-size: 18px;
     width: 100px;
-    height: 35px;
+    height: 35px;*/
 }
 
 .give_terms_links {
     float: right;
 }
-*/
+
 .give-donation-level-btn {
     font-family: var(--main-font);
     font-size: 1rem;
@@ -1400,16 +1400,15 @@ section.adoptable-story h2 {
     background: var(--blue-hover);
 }
 
-/*
 
 div#give-sidebar-left {
-    width: 5%;
-    float: left;
+   /* width: 5%;
+    float: left;*/
 }
 
 [id*='give-form'] div.summary {
-    width: 95%;
-    float: right;
+  /*  width: 95%;
+    float: right;*/
 }
 
 
@@ -1418,21 +1417,19 @@ form[id*='give-form'] .give-donation-amount {
     /*  margin: 20px 100px 15px;
     width: 300px;
     position: relative;  */
-    /*top:62px;	right:-50px;
-    margin-left: 55vw;
-    margin-top: -70px;
+    /*top:62px;	right:-50px; */
+   /* margin-left: 55vw;
+    margin-top: -70px;*/
 }
 
 form[id*='give-form'] #give-final-total-wrap {
-    margin: 25px 0;
+  /*  margin: 25px 0;
     padding: 0;
-    *zoom: 1;
+    *zoom: 1;*/
 }
 
-*/
-/*
 form[id*='give-form'] #give-final-total-wrap .give-donation-total-label {
-    background-color: #f2f2f2;
+/*    background-color: #f2f2f2;
     border: none;
     color: #333;
     margin: 0;
@@ -1443,9 +1440,9 @@ form[id*='give-form'] #give-final-total-wrap .give-donation-total-label {
     font-size: 18px;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
-    box-sizing: border-box;
+    box-sizing: border-box;*/
 }
-*/
+
 form[id*='give-form'] .give-hidden,
 #give-recurring-form .give-hidden,
 form.give-form .give-hidden {
@@ -1461,7 +1458,7 @@ form[id*='give-form'] .give-donation-amount .give-currency-symbol.give-currency-
 }
 
 form[id*='give-form'] .give-donation-amount .give-currency-symbol {
-    background-color: transparent;
+/*    background-color: transparent;
     border: none;
     margin: 0;
     padding: 0 12px;
@@ -1470,17 +1467,17 @@ form[id*='give-form'] .give-donation-amount .give-currency-symbol {
     font-size: 18px;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
-    box-sizing: border-box;
+    box-sizing: border-box;*/
 }
 
 
 form[id*='give-form'] .give-donation-amount #give-amount,
 form[id*='give-form'] .give-donation-amount #give-amount-text {
-    background: #FFF;
+/*    background: #FFF;
     border-radius: 4px;
     border: none;
     box-shadow: var(--box-shadow);
-    justify-self: flex-end;
+    justify-self: flex-end;*/
     /*height: 35px;
     line-height: 35px;
     padding: 0 12px;
@@ -1492,8 +1489,31 @@ form[id*='give-form'] .give-donation-amount #give-amount-text {
     /*width: 125px;*/
 }
 
+/* DONATION POP UP */
 
+.give-input {
+    border-radius: 4px!important;
+    border: 0px!important;
+}
 
+.give-donation-total-label {
+    background-color: var(--light-green)!important;
+    padding: 0 12px 0 0!important;
+    font-size: 1rem;
+    border: 0!important;
+}
+
+.give-submit {
+    text-transform: uppercase;
+    font-size: .9rem;
+    font-size: 1rem;
+}
+
+.give-final-total-amount {
+    border-radius: 4px!important;
+    border: 0px!important;
+    font-size: 1rem;
+}
 /*-------------------
 ## END Donation Bar
 ---------------------*/
@@ -1514,11 +1534,6 @@ form[id*='give-form'] .give-donation-amount #give-amount-text {
     color: #342f38;
 }
 
-.gf_wrapper h3 {
-    font-weight: bold;
-    text-align: center;
-}
-
 .gform_wrapper .gform_heading {
     font-size: 24px;
     font-weight: bold;
@@ -1530,12 +1545,20 @@ form[id*='give-form'] .give-donation-amount #give-amount-text {
     font-size: 24px;
     padding-left: 10px;
     display: none;
+}
 
-
+.gform_title {
+    width: 100%;
+    background-color: #545f5e;
+    color:#fff;
 }
 
 .entry-title {
     display: none;
+}
+
+.give-total-wrap {
+    width: 0;
 }
 
 .gform_wrapper input[type=text],
@@ -1570,12 +1593,6 @@ form[id*='give-form'] .give-donation-amount #give-amount-text {
     font-weight: bold;
     font-size: 2em;
     margin-top: 20px;
-}
-
-.gform_title {
-    width: 100%;
-    background-color: #545f5e;
-    color:#fff;
 }
 
 .gform_wrapper h3.gform_title {
