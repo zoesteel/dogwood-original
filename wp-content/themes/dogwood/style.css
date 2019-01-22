@@ -1300,12 +1300,11 @@ section.adoptable-story h2 {
 
 .give-form ul {
     display: flex;
-    /*flex-direction: row;*/
     justify-content: center;
 }
 
 #give-recurring-form, form.give-form, form[id*=give-form] {
-    padding: 3.75rem;
+    padding: 1.75rem;
 }
 
 
@@ -1393,13 +1392,15 @@ section.adoptable-story h2 {
     font-weight: 500;
     box-shadow: var(--box-shadow);
     border: none;
-    justify-self: center;
+    margin: 0 auto!important;
+    display: block;
+    border-radius: 4px!important;
+    border: 0px!important;
 }
 
 .give-btn-modal:hover {
     background: var(--blue-hover);
 }
-
 
 div#give-sidebar-left {
    /* width: 5%;
@@ -1410,8 +1411,6 @@ div#give-sidebar-left {
   /*  width: 95%;
     float: right;*/
 }
-
-
 
 form[id*='give-form'] .give-donation-amount {
     /*  margin: 20px 100px 15px;
@@ -1489,12 +1488,25 @@ form[id*='give-form'] .give-donation-amount #give-amount-text {
     /*width: 125px;*/
 }
 
+.give-total-wrap {
+    /*width: 0;*/
+    display: flex;
+    justify-content: center;
+}
+
+.give-currency-symbol {
+    border: 0!important;
+    border-radius: 4px 0 0 4px!important;
+}
+
+.give-text-input {
+    border-radius: 0 4px 4px 0!important;
+    border: 0!important;
+}
+
 /* DONATION POP UP */
 
-.give-input {
-    border-radius: 4px!important;
-    border: 0px!important;
-}
+
 
 .give-donation-total-label {
     background-color: var(--light-green)!important;
@@ -1514,6 +1526,9 @@ form[id*='give-form'] .give-donation-amount #give-amount-text {
     border: 0px!important;
     font-size: 1rem;
 }
+
+
+
 /*-------------------
 ## END Donation Bar
 ---------------------*/
@@ -1524,14 +1539,14 @@ form[id*='give-form'] .give-donation-amount #give-amount-text {
 ---------------------*/
 
 .gform_wrapper {
-    overflow: inherit;
+    /*overflow: inherit;
     margin-top: 10px;
     left: 0;
     right: 0;
     display: block;
     box-sizing: border-box;
     clear: both;
-    color: #342f38;
+    color: #342f38;*/
 }
 
 .gform_wrapper .gform_heading {
@@ -1557,11 +1572,8 @@ form[id*='give-form'] .give-donation-amount #give-amount-text {
     display: none;
 }
 
-.give-total-wrap {
-    width: 0;
-}
 
-.gform_wrapper input[type=text],
+/*.gform_wrapper input[type=text],
 .gform_wrapper input[type=url],
 .gform_wrapper input[type=email],
 .gform_wrapper input[type=tel],
@@ -1573,7 +1585,7 @@ form[id*='give-form'] .give-donation-amount #give-amount-text {
     letter-spacing: normal;
     text-indent: .25em;
     margin-bottom: 10px;
-}
+}*/
 
 .gform_wrapper span.gform_description {
     font-weight: normal
