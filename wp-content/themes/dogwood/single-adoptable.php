@@ -87,12 +87,9 @@ get_header(); ?>
                     <div class="clear"></div>
 
                     <section class='adoptable-story'>
-                    <h2>About <?php the_title();?></h2>
-                    <?php
-                        echo "<p class='adoptable-story'>$story</p>";
-                        echo "</section>";
-
-                    ?>
+                        <h2>About <?php the_title();?></h2>
+                    
+                        <p class='adoptable-story'><?php echo $story; ?> </p>
                     </section>
                 </div>
             </div> <!-- end entry-content -->
