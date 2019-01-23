@@ -1,4 +1,4 @@
-/*Theme Name: DogwoodTheme 
+Theme Name: DogwoodTheme 
 URI: http://underscores.me/
 Author: Alex, Maida, Zoe
 Author URI: http://ahon.htpwebdesign.ca
@@ -1033,17 +1033,17 @@ object {
 }
 
 .social a {
-    opacity: 0.9;
+    opacity: 0.7;
     -o-transition:.5s;
     -ms-transition:.5s;
     -moz-transition:.5s;
     -webkit-transition:.5s;
     transition:.5s;
-    color: var(--med-green);
+    color: var(--bright-green);
 }
 
 .social a:hover {
-    color: var(--bright-green);
+    opacity: 0.9;
 }
 
 .donate, .header-donate {
@@ -1255,11 +1255,12 @@ section.adoptable-story h2 {
 	## Donation Bar
 -----------------*/
 
-.give-form-wrap {
+.give-form {
     /*display: none;*/
     font-family: var(--main-font);
     /*background-color: var(--light-green);*/
-    border-radius: 5px;
+    border-radius: 4px;
+    font-size: 0.9rem;
     /*height: 160px;
     padding-top: 1.5rem;
     text-align: center;
@@ -1285,26 +1286,13 @@ section.adoptable-story h2 {
     font-weight: 500;
 }
 
-.give-form {
-    background-color: var(--light-green);
-   /* padding: 9rem;
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;*/
-
-}
-
-.gform_title{
-    text-align: center;
-}
-
 .give-form ul {
     display: flex;
     justify-content: center;
 }
 
 #give-recurring-form, form.give-form, form[id*=give-form] {
-    padding: 1.75rem;
+    /*padding: 1.75rem;*/
 }
 
 
@@ -1317,8 +1305,6 @@ section.adoptable-story h2 {
     color: #342F38;*/
 }
 
-
-
 .give-form-content-wrap p {
     /* color: #545f5e;
     font-size: 16px;
@@ -1329,15 +1315,21 @@ section.adoptable-story h2 {
 }
 
 #give-donation-level-button-wrap {
-   /* zoom: 1;
+/*    zoom: 1;
     margin: 20px 0 5px 15px;
     padding: 0;
     clear: both;
     list-style: none;
-    margin-top: 0;
-    width: 60%;
-    margin-left: 5%;
+    margin-top: 0;*/  
+  /*  margin-left: 5%;
     font-size: 14px;*/
+}
+
+@media screen and (min-width: 768px) {
+    #give-donation-level-button-wrap {
+        /*width: 50%;*/
+    }
+   
 }
 
 #give-donation-level-button-wrap:before,
@@ -1366,11 +1358,12 @@ section.adoptable-story h2 {
 
 .give-donation-level-btn {
     font-family: var(--main-font);
-    font-size: 1rem;
+    /*font-size: 1rem;*/
     border: none;
     background-color: #fff;
     box-shadow: var(--box-shadow);
     color: var(--dark-green);
+    margin: 0!important;
 }
 
 .give-donation-level-btn:hover,
@@ -1381,13 +1374,13 @@ section.adoptable-story h2 {
 }
 
 .give-btn-modal {
-    background: var(--blue-link);
+    /*background: var(--blue-link);
     color: #fff;
     width: 9.5rem;
     height: 2.5rem;
     padding: 8px 10px;
     cursor: pointer;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     text-transform: uppercase;
     font-weight: 500;
     box-shadow: var(--box-shadow);
@@ -1395,52 +1388,32 @@ section.adoptable-story h2 {
     margin: 0 auto!important;
     display: block;
     border-radius: 4px!important;
-    border: 0px!important;
+    border: 0px!important;*/
+/*}*/
+    background-color: var(--blue-link); 
+    color: #fff;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    margin-top: 1rem;
+    transition: background-color 0.3s, color 0.3s;
+    box-shadow: var(--box-shadow);
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-radius: 4px;
+    border: none!important;
+    margin-right: 5px;
 }
-
+ 
 .give-btn-modal:hover {
     background: var(--blue-hover);
 }
 
-div#give-sidebar-left {
-   /* width: 5%;
-    float: left;*/
+.give-btn-modal:active{
+    display: block;
 }
 
-[id*='give-form'] div.summary {
-  /*  width: 95%;
-    float: right;*/
-}
-
-form[id*='give-form'] .give-donation-amount {
-    /*  margin: 20px 100px 15px;
-    width: 300px;
-    position: relative;  */
-    /*top:62px;	right:-50px; */
-   /* margin-left: 55vw;
-    margin-top: -70px;*/
-}
-
-form[id*='give-form'] #give-final-total-wrap {
-  /*  margin: 25px 0;
-    padding: 0;
-    *zoom: 1;*/
-}
-
-form[id*='give-form'] #give-final-total-wrap .give-donation-total-label {
-/*    background-color: #f2f2f2;
-    border: none;
-    color: #333;
-    margin: 0;
-    padding: 0 12px;
-    float: left;
-    height: 35px;
-    line-height: 35px;
-    font-size: 18px;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;*/
-}
 
 form[id*='give-form'] .give-hidden,
 #give-recurring-form .give-hidden,
@@ -1489,7 +1462,6 @@ form[id*='give-form'] .give-donation-amount #give-amount-text {
 }
 
 .give-total-wrap {
-    /*width: 0;*/
     display: flex;
     justify-content: center;
 }
@@ -1499,34 +1471,56 @@ form[id*='give-form'] .give-donation-amount #give-amount-text {
     border-radius: 4px 0 0 4px!important;
 }
 
+@media only screen and (min-width: 768px) {
+    .give-currency-symbol {
+        /*top: 3rem;*/
+        /*position: relative;*/
+    }
+}
+
 .give-text-input {
     border-radius: 0 4px 4px 0!important;
     border: 0!important;
+    font-size: 0.9rem!important;   
+}
+
+@media only screen and (min-width: 768px) {
+    .give-text-input {
+        /*top: 3rem;*/
+        /*position: relative;*/
+    }
 }
 
 /* DONATION POP UP */
 
-
+.mfp-content {
+    background-color: var(--light-green)!important;
+    border-radius: 5px;
+    padding: 33px!important;
+}
 
 .give-donation-total-label {
     background-color: var(--light-green)!important;
     padding: 0 12px 0 0!important;
-    font-size: 1rem;
+    font-size: 0.9rem!important;
     border: 0!important;
+}
+
+.give-input {
+    font-size: 0.9rem;
+    border: 0!important;
+    border-radius: 4px!important;
 }
 
 .give-submit {
     text-transform: uppercase;
-    font-size: .9rem;
-    font-size: 1rem;
+    font-size: 0.9rem;
 }
 
 .give-final-total-amount {
     border-radius: 4px!important;
     border: 0px!important;
-    font-size: 1rem;
 }
-
 
 
 /*-------------------
@@ -2473,4 +2467,3 @@ label .gfield_label{
     }
 }
 
-*/

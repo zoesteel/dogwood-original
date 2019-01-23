@@ -56,26 +56,26 @@
 			<div class="social-donate d-flex flex-column col-12 col-sm-6 align-items-center align-items-sm-end">
 				<div class="social d-flex flex-row justify-content-between">
 					<a href="https://www.facebook.com/dogwoodrescuesociety" target="_new">
-						<span class="fa-stack fa-sm">
+						<span class="fa-stack">
 						  <i class="fas fa-circle fa-stack-2x"></i>
 						  <i class="fab fa-facebook-f fa-stack-1x" style="color: white"></i>
 						</span>
 					</a>
 					<a href="https://www.instagram.com/dogwoodrescue" target="_new">
-						<span class="fa-stack fa-sm">
+						<span class="fa-stack">
 						  <i class="fas fa-circle fa-stack-2x"></i>
 						  <i class="fab fa-instagram fa-stack-1x" style="color: white"></i>
 						</span>
 					</a>
 					<a href="https://twitter.com/dogwoodrescue" target="_new">
-						<span class="fa-stack fa-sm">
+						<span class="fa-stack">
 						  <i class="fas fa-circle fa-stack-2x"></i>
 						  <i class="fab fa-twitter fa-stack-1x" style="color: white"></i>
 						</span></a>
 			
 					
 				</div><!-- end social -->
-				<a href="
+				<!-- <a href="
 
 					<?php if ( is_front_page() || is_home() ) { 
 							echo '#give-form-100-wrap'; 
@@ -83,9 +83,13 @@
 							echo home_url(); 
 							echo '#give-form-100-wrap'; 
 						} 
-					?>">
-					<button class="btn donate-btn justify-self-end">Donate</button>
-				</a>
+					?>"> -->
+					<!-- <button class="btn donate-btn justify-self-end">Donate</button> -->
+
+				<!-- </a> -->
+				<div class="justify-self-end">
+					<?php echo do_shortcode('[give_form id="580"]'); ?>
+				</div>
 			</div>
 		<!-- </div> --><!-- .site-branding -->
 
