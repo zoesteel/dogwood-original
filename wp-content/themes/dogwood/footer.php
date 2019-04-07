@@ -18,19 +18,9 @@
 <footer id="colophon" class="site-footer container-fluid" role="contentinfo">
 	<div class="row">
 
-		<div class="site-info col-12 col-sm-7">
+		<div class="site-info col-12 col-sm-6 d-flex flex-column justify-content-center">
 					
 			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'footer-menu', 'depth' => '1', 'menu_class' => 'footer-nav d-flex flex-column flex-sm-row justify-space-between' ) ); ?>
-<!-- <div class="footer-menu">
-	 			<a href="/">Home</a> <span>|</span>
-	 			<a href="volunteer">Volunteer</a> <span>|</span>
-	 			<a href="foster">Foster</a> <span>|</span>
-	 			<a href="adopt">Adopt</a> <span>|</span>
-	 			<a href="education-resources">Resources</a> <span>|</span>
-	 			<a href="contact-us">Contact Us</a> <span></span>
-
-
-	 		</div> --> <!-- footer-menu -->
 
 			<!-- social media icons for responsive site -->
 			<div class="social-footer">
@@ -61,7 +51,7 @@
 
 		<div class="divider"></div>
 		
-		<div class="footer-right col-12 col-md-5">
+		<div class="footer-right col-12 col-sm-6">
 
 			<p>Many thanks to:</p>
 			<div class="sponsors">

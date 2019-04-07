@@ -1813,7 +1813,7 @@ label .gfield_label{
     -webkit-transition:.5s;
     transition:.5s;
     border-radius: 5px;
-    height: 300px;
+    /*height: 300px;*/
     object-fit: cover;
     margin-bottom: 1rem;
 }
