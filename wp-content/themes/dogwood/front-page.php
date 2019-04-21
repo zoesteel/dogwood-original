@@ -34,13 +34,13 @@ get_header(); ?>
 				// Display Size and Preference
 				get_template_part( 'template-parts/content', 'call-to-actions' );
 				?>
-			</div>
+			</div><!-- end call-to-actions -->
 			<div class="row">
-				<div class="col-12" 
+				<div class="col-12"> 
 					<div class="d-flex justify-content-center" style="width: 100%">
 						<?php echo do_shortcode('[give_form id="100"]') ;?>
 					</div>
-				</div>
+				</div><!-- end col -->
 			</div>
 			<div class="row">
 				<div class="col-12">
@@ -49,7 +49,7 @@ get_header(); ?>
 						get_template_part( 'template-parts/content', 'page' );
 					endwhile; // End of the loop.
 					?>
-				</div>
+				</div><!-- end col -->
 			</div>				
 		</div><!-- end container -->
 	</main><!-- #main -->

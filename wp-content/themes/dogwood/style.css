@@ -51,8 +51,14 @@ TABLE OF CONTENTS:
 :root {
     --dark-green: #3B5451;  
     --med-green: #95aca2;
-    --light-green: #dce8dd;
-    --bright-green: #79AC96;
+
+    /*--light-green: #dce8dd; original light green*/
+    /*--light-green: #9cc1af;*/
+    /*--light-green: #c7e2d5;*/
+    --light-green: #c3d8c5;
+    /*--bright-green: #79AC96;*/
+    /*--bright-green: #8dc6aa;*/
+    --bright-green: #a1d1b9;
 
     --blue-link: #477998;
     --blue-hover: #79a7b5; /* #6798a7;*/
@@ -60,7 +66,6 @@ TABLE OF CONTENTS:
     /*--light-green: #e1e8dc;*/
     /* old dark green : dbe2d2 */ 
     /*--med-green: #95AC97;*/
-
 
     --box-shadow: 4px 4px 6px -6px rgba(0,0,0,0.55);
     --text-shadow: 1px 1px 2px black;
@@ -1033,7 +1038,6 @@ object {
 }
 
 .social a {
-    opacity: 0.7;
     -o-transition:.5s;
     -ms-transition:.5s;
     -moz-transition:.5s;
@@ -1043,7 +1047,7 @@ object {
 }
 
 .social a:hover {
-    opacity: 0.9;
+    opacity: 0.7;
 }
 
 .donate, .header-donate {
@@ -1976,9 +1980,9 @@ label .gfield_label{
 ------------------------------*/
 
 .site-footer{
-    background: -moz-linear-gradient(top, #3B5451 0%, #3c646d 100%);
-    background: -webkit-linear-gradient(top, #3B5451 0%, #3c646d 100%);
-    background: linear-gradient(to bottom, #3B5451 0%, #3c646d 100%);  
+    background: -moz-linear-gradient(top, #3B5451 0%, #3c6d64 100%);
+    background: -webkit-linear-gradient(top, #3B5451 0%, #3c6d64 100%);
+    background: linear-gradient(to bottom, #3B5451 0%, #3c6d64 100%);  
     color: #e1e8dc;
     text-align: center;
     padding-top: 2rem;
